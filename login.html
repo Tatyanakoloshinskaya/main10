@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link href="https://www.figma.com/webpack-artifacts/assets/auth-98bf47adc89fd4de.min.css.br" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+      body {
+          background-color: #eaebff;
+      }
+    </style>
+</head>
+<body>
+{% block content %}
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom " style="margin-top:20px">
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    <a class="text-black me-3 py-2" href="/masters_login">Вход для мастера</a>
+    <a class="text-black me-3 py-2" href="{% url 'home' %}">Выйти</a>
+    </nav>
+</div>
+<div class="container-fluid vh-100" style="margin-top:100px">
+    <div class="" style="margin-top:45px">
+        <div class="rounded d-flex justify-content-center">
+            <div class="col-md-4 col-sm-12 shadow-lg p-5" style="background-color: #ffffff">
+                <div class="text-center">
+                    <h3 class="text-black" style="font-size: 28px; font-family: Montserrat">Вход</h3>
+                </div>
+                <div class="p-4">
+                    <form action="{% url 'profile' %}" method="post">
+                        {% csrf_token %}
+                        <!--Username -->
+                        <div class="branded_inputs_2024_brand_update--inputContainer--Y3h0q">
+                            <label class="branded_inputs_2024_brand_update--placeholder--XsMiA auth_2024_brand_updates--figmaMono--8On-z" for="current-username">Username</label>
+                            <input class="branded_inputs_2024_brand_update--input--PFtu- auth_2024_brand_updates--figmaSans--TbNxo lazy_input--lazyInput--1mJeW form-control" name="username" type="text"autocapitalize="off" autocorrect="off" autocomplete="current-username" id="current-username" aria-invalid="false" aria-describedby="username-error-text" dir="auto" value="" style="background-color: #EAEBFF">
+                        </div>
+                        <br>
+                        <!--Password -->
+                        <div class="branded_inputs_2024_brand_update--inputContainer--Y3h0q">
+                            <label class="branded_inputs_2024_brand_update--placeholder--XsMiA auth_2024_brand_updates--figmaMono--8On-z" for="current-password">Password</label>
+                            <input class="branded_inputs_2024_brand_update--input--PFtu- auth_2024_brand_updates--figmaSans--TbNxo lazy_input--lazyInput--1mJeW form-control" name="password" type="password" autocapitalize="off" autocorrect="off" autocomplete="current-password" id="current-password" aria-invalid="false" aria-describedby="password-error-text" dir="auto" value="" style="background-color: #EAEBFF">
+                        </div>
+                        <br>
+                        <div class="d-grid col-12 mx-auto">
+                            <button class="btn" style="background-color: #B1A9ED" type="submit"><span></span>Войти</button>
+                        </div>
+                        <p class="text-center mt-3">Нет аккаунта?
+                            <a class="text" style="-webkit-text-fill-color: #000000" href="/register">Регистрация</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
